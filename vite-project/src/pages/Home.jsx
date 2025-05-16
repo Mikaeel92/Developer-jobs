@@ -1,10 +1,14 @@
 import React from 'react'
-import Navbar from '../components/Navbar'
+import Slider from '../components/Slider'
+import HeroAccordion from '../components/HeroAccordion'
+import HomeJobs from '../components/HomeJobs'
 
 const Home = () => {
   return (
-    <div>
-      <Navbar/>
+    <div className='w-full min-h-screen flex justify-center items-start gap-6 bg-gray-100'>
+      <HeroAccordion/>
+      <Slider/>
+      <HomeJobs/>
     </div>
   )
 }
