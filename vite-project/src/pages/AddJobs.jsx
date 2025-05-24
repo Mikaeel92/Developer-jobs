@@ -71,7 +71,7 @@ const AddJobs = () => {
         <div className='bg-gray-100 w-[600px] flex flex-col gap-4 rounded-md p-4 shadow-md'>
           <h1 className='flex mx-auto font-bold text-2xl'>Add Job Form</h1>
 
-          {/* Job Type */}
+
           <div className='flex flex-col gap-2'>
             <label htmlFor='type' className='font-bold'>Job Type</label>
             <select id='type' required className='bg-white p-2 rounded-md'
@@ -83,7 +83,7 @@ const AddJobs = () => {
             </select>
           </div>
 
-          {/* Job Title */}
+
           <div className='flex flex-col gap-2'>
             <label htmlFor='job-title' className='font-bold'>Job Listing Name</label>
             <input id='job-title' type='text' required
@@ -91,7 +91,7 @@ const AddJobs = () => {
               value={title} onChange={(e) => setTitle(e.target.value)} />
           </div>
 
-          {/* Description */}
+
           <div className='flex flex-col gap-2'>
             <label htmlFor='description' className='font-bold'>Description</label>
             <textarea id='description' rows='4' placeholder='Add any job duties, expectations, requirements, etc'
@@ -99,7 +99,7 @@ const AddJobs = () => {
               value={description} onChange={(e) => setDescription(e.target.value)} />
           </div>
 
-          {/* Salary */}
+
           <div className='flex flex-col gap-2'>
             <label htmlFor='salary' className='font-bold'>Salary</label>
             <select id='salary' required className='bg-white p-2 text-red-700 rounded-md'
@@ -118,7 +118,7 @@ const AddJobs = () => {
             </select>
           </div>
 
-          {/* Location */}
+
           <div className='flex flex-col gap-2'>
             <label htmlFor='location' className='font-bold'>Location</label>
             <input id='location' type='text' placeholder='Company Location' required
@@ -126,10 +126,10 @@ const AddJobs = () => {
               value={location} onChange={(e) => setLocation(e.target.value)} />
           </div>
 
-          {/* Company Info Header */}
+
           <h1 className='font-bold text-2xl'>Company Info</h1>
 
-          {/* Company Name */}
+
           <div className='flex flex-col gap-2'>
             <label htmlFor='company_name' className='font-bold'>Company Name</label>
             <input id='company_name' type='text' placeholder='Company Name' required
@@ -137,7 +137,7 @@ const AddJobs = () => {
               value={companyName} onChange={(e) => setCompanyName(e.target.value)} />
           </div>
 
-          {/* Company Description */}
+
           <div className='flex flex-col gap-2'>
             <label htmlFor='company_description' className='font-bold'>Company Description</label>
             <textarea id='company_description' rows='4' placeholder='What does your company do?' required
@@ -145,7 +145,7 @@ const AddJobs = () => {
               value={companyDescription} onChange={(e) => setCompanyDescription(e.target.value)} />
           </div>
 
-          {/* Contact Email */}
+
           <div className='flex flex-col gap-2'>
             <label htmlFor='email' className='font-bold'>Contact Email</label>
             <input id='email' type='email' placeholder='Enter Your Email Address' required
@@ -153,7 +153,7 @@ const AddJobs = () => {
               value={contactEmail} onChange={(e) => setContactEmail(e.target.value)} />
           </div>
 
-          {/* Contact Phone */}
+
           <div className='flex flex-col gap-2'>
             <label htmlFor='phone' className='font-bold'>Contact Phone</label>
             <input id='phone' type='tel' placeholder='Enter Your Phone Number'
@@ -161,7 +161,6 @@ const AddJobs = () => {
               value={contactPhone} onChange={(e) => setContactPhone(e.target.value)} />
           </div>
 
-          {/* Submit Button */}
           <button type='submit' className='bg-blue-700 hover:bg-blue-600 text-white rounded-full px-40 py-2 font-bold'>
             Add Job
           </button>
