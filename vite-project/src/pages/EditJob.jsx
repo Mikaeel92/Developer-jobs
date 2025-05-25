@@ -61,14 +61,14 @@ const EditJob = () => {
     return await response.json()
   }
 
-  const { mutate: updateMutate, isPending } = useMutation({
+  const { mutate: updateMutate } = useMutation({
     mutationFn: updateJob,
     onSuccess: () => {
       alert('Job updated successfully!')
       navigate('/jobs')
     },
-    onError: (err) => {
-      alert(err.message)
+    onError: (error) => {
+      alert(error.message)
     }
   })
 
@@ -230,9 +230,7 @@ const EditJob = () => {
           <button
             type='submit'
             className='bg-blue-700 hover:bg-blue-600 text-white rounded-full px-40 py-2 font-bold'
-            disabled={isPending}
           >
-            {isPending ? 'Updating...' : 'Update Job'}
           </button>
         </div>
       </form>
