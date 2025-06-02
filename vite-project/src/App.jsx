@@ -9,6 +9,9 @@ import { ToastContainer } from 'react-toastify';
 import NotFoundPage from './pages/NotFoundPage'
 import SingleJobPage from './pages/SingleJobPage'
 import EditJob from './pages/EditJob'
+import Login from './pages/Login'
+import SignUp from './pages/SignUp'
+import LoginSIgnUp from './pages/LoginSIgnUp'
 
 const App = () => {
   return (
@@ -23,6 +26,7 @@ const App = () => {
         <Route path='/edit-job/:id' element={<EditJob/>}/>
         <Route path='/add-jobs' element={<AddJobs/>}/>
         <Route path='*' element={<NotFoundPage/>}/>
+        <Route path='/login-sign-up' element={<LoginSIgnUp/>}/>
       </Routes>
       <Footer/>
       </BrowserRouter>

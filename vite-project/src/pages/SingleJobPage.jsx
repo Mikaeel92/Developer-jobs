@@ -4,6 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { FaArrowLeft, FaMapMarker } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { IoLocation } from "react-icons/io5";
+import { useUserHook } from '../custom-hook/useUserHook';
 
 
 const SingleJobPage = () => {
@@ -11,6 +12,8 @@ const SingleJobPage = () => {
 const { id } = useParams()
 
 const navigate = useNavigate()
+
+const { user } = useUserHook()
 
 const fetchJob = async () => {
     const response = await fetch (`http://localhost:8000/jobs/${id}`)
@@ -120,8 +123,11 @@ return (
               <div className='bg-white p-6 rounded-lg shadow-md flex flex-col gap-4'>
                 <h1 className='font-bold text-xl'>Manage Job</h1>
                 <Link to={`/edit-job/${job.id}`} className='bg-blue-600 hover:bg-blue-700 text-white rounded-full p-2 flex item-center justify-center shadow-md'>Edit Job</Link>
+                {
+                user?.role === 'admin' &&
                 <button className='bg-red-600 hover:bg-red-700 text-white rounded-full p-2 flex item-center justify-center shadow-md'
-                  onClick={() => onDelete(job.id)}>Delete Job</button>
+                onClick={() => onDelete(job.id)}>Delete Job</button>
+                }
               </div>
             </aside>
           </div>

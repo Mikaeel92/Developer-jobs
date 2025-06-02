@@ -10,7 +10,7 @@
         "name": "Dolor Cloud",
         "description": "Dolor Cloud is a leading technology company specializing in digital solutions for businesses of all sizes. With a focus on innovation and customer satisfaction, we are committed to delivering cutting-edge products and services.",
         "contactEmail": "contact@dolorsitamet.com",
-        "contactPhone": "888888888"
+        "contactNumber": ""
       },
       "id": "2"
     },
@@ -83,6 +83,14 @@
         "contactPhone": "77777"
       },
       "id": "14"
+    }
+  ],
+  "users": [
+    {
+      "id": "b1cb",
+      "username": "mikaeel",
+      "password": "1234",
+      "role": "admin"
     }
   ]
 }

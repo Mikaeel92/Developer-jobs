@@ -1,10 +1,20 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { useQuery, useMutation } from '@tanstack/react-query'
+import { useUserHook } from '../custom-hook/useUserHook'
 
 const EditJob = () => {
   const { id } = useParams()
   const navigate = useNavigate()
+
+  const { user } = useUserHook()
+
+  useEffect(() => {
+    if(user?.role !== 'admin') {
+      alert("You don't have premission to edit jobs!")
+      navigate('/')
+    }
+  },[user])
 
   const fetchJob = async () => {
     const response = await fetch(`http://localhost:8000/jobs/${id}`)
@@ -231,6 +241,7 @@ const EditJob = () => {
             type='submit'
             className='bg-blue-700 hover:bg-blue-600 text-white rounded-full px-40 py-2 font-bold'
           >
+            Update
           </button>
         </div>
       </form>
