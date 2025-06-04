@@ -87,9 +87,9 @@
   ],
   "users": [
     {
-      "id": "b1cb",
-      "username": "mikaeel",
-      "password": "1234",
+      "id": "1038",
+      "username": "admin",
+      "password": "12345",
       "role": "admin"
     }
   ]

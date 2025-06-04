@@ -28,6 +28,9 @@ const {isLoading, data: job, error} = useQuery({
     queryFn: fetchJob
 })
 
+const isOwner = user?.id === job?.userId
+const isAdmin = user?.role === 'admin'
+
 // if(isLoading) {
 //   return <div>Data is Loding...</div>
 // }
@@ -122,12 +125,13 @@ return (
               </div>
               <div className='bg-white p-6 rounded-lg shadow-md flex flex-col gap-4'>
                 <h1 className='font-bold text-xl'>Manage Job</h1>
+                {(isAdmin || isOwner) && (
+                  <>
                 <Link to={`/edit-job/${job.id}`} className='bg-blue-600 hover:bg-blue-700 text-white rounded-full p-2 flex item-center justify-center shadow-md'>Edit Job</Link>
-                {
-                user?.role === 'admin' &&
                 <button className='bg-red-600 hover:bg-red-700 text-white rounded-full p-2 flex item-center justify-center shadow-md'
                 onClick={() => onDelete(job.id)}>Delete Job</button>
-                }
+                  </>
+                )}
               </div>
             </aside>
           </div>

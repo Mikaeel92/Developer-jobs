@@ -4,17 +4,12 @@ import { useQuery, useMutation } from '@tanstack/react-query'
 import { useUserHook } from '../custom-hook/useUserHook'
 
 const EditJob = () => {
+
   const { id } = useParams()
+
   const navigate = useNavigate()
 
   const { user } = useUserHook()
-
-  useEffect(() => {
-    if(user?.role !== 'admin') {
-      alert("You don't have premission to edit jobs!")
-      navigate('/')
-    }
-  },[user])
 
   const fetchJob = async () => {
     const response = await fetch(`http://localhost:8000/jobs/${id}`)
@@ -28,6 +23,13 @@ const EditJob = () => {
     queryKey: ['job', id],
     queryFn: fetchJob
   })
+
+    useEffect(() => {
+    if (user && user.role !== 'admin' && user.id !== job?.userId) {
+      alert("You don't have premission to edit jobs!")
+      navigate('/')
+    }
+  },[user, job])
 
   const [type, setType] = useState('')
   const [title, setTitle] = useState('')

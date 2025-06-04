@@ -1,7 +1,8 @@
 import { useMutation } from '@tanstack/react-query';
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify';
+import { useUserHook } from '../../src/custom-hook/useUserHook'
 
 const AddJobs = () => {
 
@@ -16,6 +17,14 @@ const AddJobs = () => {
   const [contactPhone, setContactPhone] = useState('')  
 
   const navigate = useNavigate()
+  const {user} = useUserHook()
+
+  useEffect(() => {
+    if(!user) {
+      alert('You must be logged in to add a job')
+      navigate('/')
+    }
+  },[user])
 
   const sendDataToServer = async (newJob) => {
     const response = await fetch('http://localhost:8000/jobs', {
@@ -51,6 +60,7 @@ const AddJobs = () => {
       description,
       location,
       salary,
+      userId: user.id,
       company: {
         name: companyName,
         description: companyDescription,
