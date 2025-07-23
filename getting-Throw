@@ -1,0 +1,5 @@
+1- server sakhtim file shoru va asli
+2- raftim auth register (sign) up and sign in
+3- authMiddleware (negahbane k token ro check kone)
+4- roleMiddleware for check for example admin could inter in some routes
+5- using this two middleware (authMiddleware & roleMiddleware) on routes like => /dashboard & /jobs & /admine-panel

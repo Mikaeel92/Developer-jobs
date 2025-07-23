@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 import { IoLocation } from "react-icons/io5";
 import { useUserHook } from '../custom-hook/useUserHook';
 
-
 const SingleJobPage = () => {
 
 const { id } = useParams()
@@ -72,13 +71,13 @@ const {isPending, mutate, error: deleteError} = useMutation( {
 })
 
 const onDelete = (id) => {
+  
 const confirm = window.confirm('Are you sure to delete this job?')
 
 if(!confirm) return
 
 mutate(id)
 }
-
 
 return (
   <>

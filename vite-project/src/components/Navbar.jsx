@@ -19,7 +19,6 @@ const Navbar = () => {
     <nav className='w-full h-20 bg-blue-100'>
       <div className='flex max-w-6xl mx-auto items-center justify-between p-2'>
 
-        {/* Logo */}
         <div>
           <NavLink to='/' className='flex items-center gap-2'>
             <img src={logo} alt="logo" className='w-14 h-14 rounded-full'/>
@@ -27,7 +26,6 @@ const Navbar = () => {
           </NavLink>
         </div>
 
-        {/* User Info & Logout */}
         <div className='flex items-center gap-4'>
           {user ? (
             <>
@@ -49,7 +47,6 @@ const Navbar = () => {
           )}
         </div>
 
-        {/* Navigation Links */}
         <div className='flex gap-6'>
           <NavLink to='/' className={activeClass}>Home</NavLink>
           <NavLink to='/jobs' className={activeClass}>Jobs</NavLink>

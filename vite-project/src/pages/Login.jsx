@@ -83,6 +83,7 @@ if(isLoading) return <div>Loading...</div>
     </div>
         <div>
       <select name='role' value={roleField} onChange={(e) => setRoleField(e.target.value)}>
+        <option value="" disabled>Choose Role</option>
         <option value="admin">Admin</option>
         <option value="user">User</option>
       </select>
